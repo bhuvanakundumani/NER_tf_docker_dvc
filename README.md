@@ -61,17 +61,6 @@ curl -i -H "Content-Type: application/json" \
 -X POST http://0.0.0.0:8088/ner -d '{"sent":"Steve went to Paris"}'
 ```
 
-
-Predict on test Dataset
-```bash
-python3 predict.py --data data --model_dir models_output
-```
-Predict a single sentence - Assign the sentence to test_sentence variable. 
-
-```bash
-python3 predict.py --data data --model_dir models_output --predsingle True
-```
-
 Visualisations 
 ```bash
 tensorboard --logdir=model_output/logs/train --port=6006 --bind_all
