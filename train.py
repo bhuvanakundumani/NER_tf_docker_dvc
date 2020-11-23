@@ -56,7 +56,7 @@ def main():
     # padding sentences and labels to max_length of 128
     max_seq_len = 128
     EMBEDDING_DIM = 100
-    epochs = 1
+    epochs = 10
 
     split_train = split_text_label(os.path.join(args.data, "train.txt"))
     split_valid = split_text_label(os.path.join(args.data, "valid.txt"))
