@@ -12,9 +12,11 @@ env*/
 
 embeddings/glove.6B.100d.txt
 
+data/*
 model_output/*
 model_output/*.*
 
 model*/*.*
 
 
+/data
