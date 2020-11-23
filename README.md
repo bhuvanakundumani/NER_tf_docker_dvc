@@ -11,7 +11,7 @@ https://medium.com/analytics-vidhya/ner-tensorflow-2-2-0-9f10dcf5a0a.
 
 - Download and store glove.6B.100d.txt from [here](http://nlp.stanford.edu/data/glove.6B.zip)
 - data folder has the dataset. 
-- model output files after training will be written to the model_outout directory.
+- model output files after training will be written to the model_output directory.
 
 ```
 ├── data
@@ -43,8 +43,16 @@ python3 train.py --data data --output  model_output --overwrite True
 ```
 
 ## API
+To use api.py uncomment the 
 ```bash 
 python3 api.py
+```
+
+## WSGI server (gunicorn with nginx)
+
+``` bash
+gunicorn --bind :8088 --workers 1 --threads 8 api:app
+
 ```
 
 ## cURL 
