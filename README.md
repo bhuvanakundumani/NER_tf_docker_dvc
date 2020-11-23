@@ -1,8 +1,6 @@
 
 NER TF 2.0 inference(single sentence)for CoNLL-2003 NER dataset. 
 
-(Inference for single sentence)
-
 A detailed blog for training the model in TF 2.0 is available at
 
 https://medium.com/analytics-vidhya/ner-tensorflow-2-2-0-9f10dcf5a0a. 
