@@ -21,3 +21,4 @@ model*/*.*
 
 /data
 /embeddings
+/model_output
