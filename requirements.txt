@@ -2,7 +2,7 @@ dvc
 boto3
 dvc[all]
 dvc[s3]
-tensorflow==2.2.0
+tensorflow-gpu==2.0.0
 numpy==1.17.3
 scikit-learn==0.22.1
 keras==2.3.0
