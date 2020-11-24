@@ -5,52 +5,23 @@ A detailed blog for training the model in TF 2.0 is available at
 
 https://medium.com/analytics-vidhya/ner-tensorflow-2-2-0-9f10dcf5a0a. 
 
-## Folder structure
-
-- Download and store glove.6B.100d.txt from [here](http://nlp.stanford.edu/data/glove.6B.zip)
-- data folder has the dataset. 
-- model output files after training will be written to the model_output directory.
-
+## S3 credentials
+Create a file .env with secrets
+``` bash
+AWS_ACCESS_KEY_ID=aws_access_key_id
+AWS_SECRET_ACCESS_KEY=aws_secret_access_key
 ```
-├── data
-│   ├── train.txt
-│   ├── valid.txt
-│   ├── test.txt
-│
-├── embeddings
-│   ├── glove.6B.100d.txt
-│   
-├── model_output
-│   ├── checkpoint
-│   ├── embedding.pkl
-│   ├── idx2Label.pkl
-│   ├── model_weights.data-00000-of-00001
-│   ├── model_weights.index
-│   ├── word2Idx.pkl
-│   
-```
-## Setup 
+## Docker instructions
+- To build and start the container
+
 ```bash
-python3 -m venv venv1
-source venv1/bin/activate
-pip install -r requirements.txt
-```
-## Model training 
-``` bash
-python3 train.py --data data --output  model_output --overwrite True 
+docker-compose up
 ```
 
-## API
-To use api.py uncomment the 
-```bash 
-python3 api.py
-```
+- To stop the container
 
-## WSGI server (gunicorn with nginx)
-
-``` bash
-gunicorn --bind :8088 --workers 1 --threads 8 api:app
-
+```bash
+docker-compose down
 ```
 
 ## cURL 
@@ -67,9 +38,6 @@ curl -i -H "Content-Type: application/json" \
 -X POST http://0.0.0.0:8088/ner -d '{"sent":"Steve went to Paris"}'
 ```
 
-Visualisations 
-```bash
-tensorboard --logdir=model_output/logs/train --port=6006 --bind_all
-tensorboard --logdir=model_output/logs/valid --port=6006 --bind_all
-```
+## Setup without docker 
+- Please refer the code [Here](https://github.com/bhuvanakundumani/NER_tf_dvc_s3)
 
